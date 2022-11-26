@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del Ahorcado</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nerko+One&family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap">
+    <script src="https://kit.fontawesome.com/ed3e3dc882.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="index.html"><img class="logo-img" src="./img/logo.png" alt="logo alura"></a>
+        </div>
+    </header>
+    <main>
+        <section class="main-container">
+            <canvas id="canvas" width="600" height="360"></canvas>
+            <canvas id="canvas-lines" width="600" height="120"></canvas>
+            <div class="tips-container">
+                <i class="fa-solid fa-circle-info"></i>
+                <p class="tips">Presione una letra en su teclado para jugar</p>
+            </div>
+            <div class="game-buttons-container">
+                <p class="game-buttons" id="new-game-button">Nuevo juego</p>
+                <a href="index.html" class="game-buttons" id="give-up-button">Rendirse</a>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p class="author">&copy Made by Nicolás Valdez</p>
+    </footer>
+    <script src="words.js"></script>
+    <script src="game.js"></script>
+</body>

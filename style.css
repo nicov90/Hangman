@@ -1,0 +1,220 @@
+*,body{
+    font-family: 'Inter', sans-serif;
+}
+html{
+    background-color: rgb(255, 241, 223);
+}
+main{
+    width: 100vw;
+    height: calc(100vh - 201px);
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    height: 100px;
+}
+.logo-container{
+    width: 100vw;
+}
+.logo-img{
+    margin: 25px 40px;
+}
+#index-canvas{
+    width: 400px;
+    height: 300px;
+}
+.buttons-index-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw;
+    height: 200px;
+    text-align: center;
+    margin: 30px auto;
+    max-width: 80%;
+}
+.buttons{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 30px;
+}
+.buttons, .buttons-addword, .game-buttons{
+    border: 1px solid black;
+    font-size: 1.1em;
+    line-height: 1.3;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s all;
+}
+.buttons:hover,.buttons-addword:hover{
+    background-color: rgb(255, 207, 207);
+    border-color: rgba(212, 0, 0,0.8);
+    color: rgb(151, 20, 20);
+}
+#button-start{
+    font-weight: 600;
+}
+#button-addword-index{
+    align-self: center;
+    padding: 28px;
+    font-size: 1.1em;
+    font-weight: 300;
+    background-color: rgba(82, 27, 27, 0.103);
+    border: 2px dashed rgb(0, 0, 0);
+    color: rgb(70, 50, 50);
+}
+#button-addword-index:hover{
+    background-color: rgba(83, 18, 18, 0.226);
+    color: brown;
+}
+.main-container{
+    margin: 5vh auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.addword-container{
+    margin: 10vh auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#word-input{
+    background-color: transparent;
+    border: none;
+    resize: none;
+    width: 500px;
+    height: 400px;
+    font-size: 1.8em;
+    color: black;
+}
+#word-input:focus{
+    outline: none;
+}
+#word-input::placeholder{
+    color: rgba(54, 0, 0, 0.486);
+}
+.warning-container{
+    display: flex;
+    gap: 5px;
+    margin: 12px 0;
+    align-items: center;
+}
+.fa-triangle-exclamation{
+    scale: 90%;
+}
+.warning{
+    font-size: 0.9em;
+    font-weight: 300;
+}
+.fa-check{
+    margin-right: 10px;
+}
+.buttons-addword-container, .game-buttons-container{
+    display: flex;
+    gap: 5%;
+}
+.game-buttons-container{
+    margin: 0 40px;
+}
+.buttons-addword, .game-buttons{
+    font-size: 1em;
+    background-color: white;
+    font-weight: 500;
+    border-radius: 20px;
+    width: 47.5%;
+    padding: 15px;
+    text-align: center;
+}
+#button-cancel, #give-up-button{
+    background-color: rgb(80, 91, 102);
+    color: white;
+    border: none;
+}
+#button-cancel:hover{
+    background-color: rgb(89, 111, 134);
+}
+#canvas,.letter-spacing-container{
+    margin: 0 auto;
+}
+#canvas{
+    width: 600px;
+    height: 360px;
+}
+.letter-spacing-container{
+    color: darkblue;
+    font-size: 1.8em;
+    letter-spacing: 40px;
+}
+.tips-container{
+    display: flex;
+    margin: 12px 40px;
+    align-items: center;
+}
+.fa-circle-info{
+    scale: 95%;
+    margin-right: 5px;
+}
+.tips{
+    font-size: 14px;
+}
+#new-game-button:hover{
+    background-color: rgb(255, 240, 251);
+    cursor: pointer;
+}
+#give-up-button:hover{
+    background-color: rgb(89, 111, 134);
+}
+#canvas-lines{
+    width: 600px;
+    height: 120px;
+}
+.author{
+    padding-top: 5px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 320px){
+    .buttons-index-container{
+        max-width: 280px;
+    }
+    .buttons{
+        font-size: 1.3em;
+    }
+}
+@media screen and (min-width: 480px){
+    .buttons-index-container{
+        max-width: 300px;
+    }
+    .buttons{
+        font-size: 1.5em;
+    }
+    #button-addword{
+        font-size: 95%;
+    }
+}
+@media screen and (min-width: 768px){
+    
+}
+@media screen and (min-width: 860px){
+
+}
+@media screen and (min-width: 1024px){
+
+}
+@media screen and (min-width: 1220px){
+
+}
