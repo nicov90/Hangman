@@ -46,18 +46,11 @@ function createLines(){
         x += 60;
     });
 }
-function createLetterHistory(inputKey,letterHistory,x2){
-    if(inputKey != null){
-    letterHistory.push(inputKey);
-    ctxLines.fillStyle = "rgb(225,0,0)";
-    ctxLines.font = "20px Inter";
-    ctxLines.fillText(inputKey,x2,100);
-    }
-}
 function mainGame(){
     let tryCounter = 0; // Lleva la cuenta cada vez que se intenta agregar una letra.
     let pos = 1; // Usado para controlar el dibujado de lineas.
     let gameStarted = false; // Usado para hacer desaparecer el letrero principal si el juego comenzó.
+
     const letterHistory = [];
 
     ctxLines.textAlign = "center";
@@ -65,19 +58,40 @@ function mainGame(){
 
     mainBox(gameStarted);
 
-    // Letrero
     window.addEventListener("keydown",(e)=> {
+        duplicate = false;
         if(!endgame){ // Si el juego no está terminado...
             letterCheck = false; // Variable para restringir el dibujado de lineas si la letra ingresada es correcta.
             const regex = /^[A-Za-z\u00F1\u00D1]$/;
             let inputKey = null;
             inputKey = validateKey(e,regex,inputKey);
             
-            if(inputKey != null){
-                x2 += 30;
-            }
             wordLength();
-            createLetterHistory(inputKey,letterHistory,x2);
+
+            // Creating letter history //
+            if(inputKey != null){
+                if(tryCounter == 0){
+                    letterHistory.push(inputKey);
+                    ctxLines.fillStyle = "rgb(225,0,0)";
+                    ctxLines.font = "20px Inter";
+                    ctxLines.fillText(inputKey,x2,100);
+                }
+                if(tryCounter > 0){
+                    letterHistory.forEach((eLetterHistory) =>{
+                        if(eLetterHistory == inputKey){
+                            duplicate = true;
+                        }
+                    });
+                    if(!duplicate){
+                        x2 += 30;
+                        letterHistory.push(inputKey);
+                        ctxLines.fillStyle = "rgb(225,0,0)";
+                        ctxLines.font = "20px Inter";
+                        ctxLines.fillText(inputKey,x2,100);
+                    }
+                }
+            }
+            //
 
             ctxLines.fillStyle = "darkblue";
             ctxLines.font = "35px Inter";
@@ -226,9 +240,10 @@ const ctx = canvas.getContext("2d");
 const canvasLines = document.querySelector("#canvas-lines");
 const ctxLines = canvasLines.getContext("2d");
 ctx.fillStyle = "darkblue";
-let checkCounter = 0;
-let x2 = 120;
+let checkCounter = 0; // Para verificar si la cantidad de letras ingresadas correctas coincide con la longitud de la palabra.
+var x2 = 120; // Para mover la posición en X de las letras del historial.
 var endgame = false;
+var duplicate = false;
 
 randomWord();
 console.log(wordReady);
