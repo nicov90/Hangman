@@ -55,6 +55,7 @@ function createLetterHistory(inputKey,letterHistory,x2){
     }
 }
 function mainGame(){
+    let tryCounter = 0; // Lleva la cuenta cada vez que se intenta agregar una letra.
     let pos = 1; // Usado para controlar el dibujado de lineas.
     let gameStarted = false; // Usado para hacer desaparecer el letrero principal si el juego comenzó.
     const letterHistory = [];
@@ -71,7 +72,6 @@ function mainGame(){
             const regex = /^[A-Za-z\u00F1\u00D1]$/;
             let inputKey = null;
             inputKey = validateKey(e,regex,inputKey);
-            console.log(inputKey)
             
             if(inputKey != null){
                 x2 += 30;
@@ -217,6 +217,7 @@ function mainGame(){
                     }
                 }
             });
+            tryCounter++;
         }
     });
 };
