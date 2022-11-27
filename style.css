@@ -1,5 +1,5 @@
 *,body{
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', verdana;
 }
 html{
     background-color: rgb(255, 241, 223);
@@ -20,6 +20,9 @@ footer{
     margin: 25px 40px;
 }
 #index-canvas{
+    font-style: italic;
+    font-size: 50px;
+    font-family: 'Nerko One', cursive;
     width: 400px;
     height: 300px;
 }
@@ -140,6 +143,9 @@ footer{
     margin: 0 auto;
 }
 #canvas{
+    font-style: italic;
+    font-size: 35px;
+    font-family: 'Nerko One', cursive;
     width: 600px;
     height: 360px;
 }
