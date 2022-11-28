@@ -1,14 +1,14 @@
 function mainBox(gameStarted){
     if(!gameStarted){
-        ctx.font = "italic 35px Nerko One";
+        ctx.font = "bold  italic 30px Georgia";
         ctx.fillStyle = "black"
         ctx.fillRect(160,80,280,180);
         ctx.fillStyle = "beige";
         ctx.fillRect(170,90,260,160);
         ctx.fillStyle = "darkred"
-        ctx.fillText("Juego",257.5,140);
+        ctx.fillText("Juego",254.5,140);
         ctx.fillText("del",275,180);
-        ctx.fillText("Ahorcado",232.5,215);
+        ctx.fillText("Ahorcado",222.5,216);
     }
     else{
         ctx.clearRect(160,80,280,180);
@@ -50,7 +50,8 @@ function mainGame(){
     let tryCounter = 0; // Lleva la cuenta cada vez que se intenta agregar una letra.
     let pos = 1; // Usado para controlar el dibujado de lineas.
     let gameStarted = false; // Usado para hacer desaparecer el letrero principal si el juego comenzó.
-
+    let firstLetter = true;
+    const letterRegistry = [];
     const letterHistory = [];
 
     ctxLines.textAlign = "center";
@@ -103,15 +104,19 @@ function mainGame(){
                         mainBox(gameStarted);
                     }
                     if(inputKey == e2){
-                        ctxLines.fillText(e2,x,40);
                         letterCheck = true;
-                        checkCounter++;
+                        if(!letterRegistry.includes(inputKey)){
+                            console.log("COINCIDE Y NO INCLUYE")
+                            ctxLines.fillText(e2,x,40);
+                            checkCounter++;
                         }
-                        x += 60; // Posiciona las letras en X
+                    }
+                    x += 60; // Posiciona las letras en X
             
-                        /* Lineas del dibujo, se ejecuta solo al terminar de revisar todo el array y
-                        si la letra ingresada no coincidió con alguna anteriormente. */
-            
+                    /* Lineas del dibujo, se ejecuta solo al terminar de revisar todo el array y
+                    si la letra ingresada no coincidió con alguna anteriormente. */
+                    console.log("index " + index)
+                    console.log(inputKey!=e2)
                     if( (inputKey != e2) && (index == (wordReady.length - 1) && (!letterCheck)) ){
                         switch (pos) {
                             case 1: ctx.fillStyle="darkblue";
@@ -232,6 +237,8 @@ function mainGame(){
                 }
             });
             tryCounter++;
+            letterRegistry.push(inputKey);
+            console.log("Registro: " + letterRegistry);
         }
     });
 };
