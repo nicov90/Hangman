@@ -105,6 +105,14 @@ footer{
 #word-input::placeholder{
     color: rgba(54, 0, 0, 0.486);
 }
+.error-container{
+    margin: 5px 0;
+}
+.error-message{
+    color: crimson;
+    width: 400px;
+    line-height: 20px;
+}
 .warning-container{
     display: flex;
     gap: 5px;

@@ -3,6 +3,8 @@ const buttonSave = document.querySelector("#button-save");
 const words = ['Futbol','Deporte','Manzana','Arbol','Economia','Puerta','Basilica',
                 'Montaña','Pieza','Honduras','Casa','Lazo','Consola','Vehiculo'];
 const wordReady = [];
+const errorMessage = document.querySelector(".error-message");
+let input = "";
 
 function randomWord(){
     let chosenWord = words[Math.floor(Math.random()*(words.length-1))]
@@ -14,11 +16,23 @@ function randomWord(){
 }
 buttonSave.addEventListener("click",(e)=>{
     e.preventDefault();
-    let input = wordInput.value;
-    if(input!=""){
-    words.push(input);
-    console.log(words);
+    let error = "";
+    const regexAdd = /^[A-Za-z\u00F1\u00D1]+$/;
+    if(regexAdd.test(wordInput.value)){
+        input = wordInput.value;
+        console.log(input)
+        if(input.length >= 4 && input.length <= 8){
+            error = "";
+            words.push(input);
+            console.log(words);
+            }
+            else{
+                error = "La palabra debe tener al menos 4 letras";
+            }
+    }else{
+        error = "La palabra no debe contener números, ni caracteres especiales y debe tener entre 4 y 8 letras.";
     }
+    errorMessage.innerHTML = error;
 })
 function validateKey(e,regex,inputKey){
     if(regex.test(e.key)){
