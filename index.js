@@ -5,7 +5,7 @@ function mainBox(){
     ctxIndex.font = "bold italic 40px Georgia";
     ctxIndex.fillStyle = "black";
     ctxIndex.fillRect(20,20,360,260);
-    ctxIndex.fillStyle = "beige";
+    ctxIndex.fillStyle = "blanchedalmond";
     ctxIndex.fillRect(30,30,340,240);
     ctxIndex.fillStyle = "brown";
     ctxIndex.fillText("Juego",140,106);

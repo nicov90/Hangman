@@ -1,7 +1,7 @@
 const wordInput = document.querySelector("#word-input");
 const buttonSave = document.querySelector("#button-save");
-const words = ['Futbol','Deporte','Manzana','Arbol','Economia','Puerta','Basilica',
-                'Montaña','Pieza','Honduras','Casa','Lazo','Consola','Vehiculo'];
+const words = ['Futbol','Deporte','Manzana','Arbol','Economia','Puerta','Hospital','Basilica',
+                'Montaña','Guitarra','Borracho','Proyecto','Pieza','Honduras','Casa','Tablero','Lazo','Consola','Vehiculo'];
 const wordReady = [];
 const errorMessage = document.querySelector(".error-message");
 let input = "";
