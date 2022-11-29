@@ -8,8 +8,8 @@ function mainBox(){
     ctxIndex.fillStyle = "blanchedalmond";
     ctxIndex.fillRect(30,30,340,240);
     ctxIndex.fillStyle = "brown";
-    ctxIndex.fillText("Juego",140,106);
-    ctxIndex.fillText("del",165,160);
+    ctxIndex.fillText("Juego",142,106);
+    ctxIndex.fillText("del",166,160);
     ctxIndex.fillText("Ahorcado",99,208.5);
 }
 mainBox();

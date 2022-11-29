@@ -18,13 +18,13 @@ function mainBox(gameStarted){
     if(window.innerWidth < 480){
         if(!gameStarted){
             ctx.font = "bold italic 40px Georgia";
-            ctx.fillStyle = "black"
+            ctx.fillStyle = "rgb(80,50,50)"
             ctx.fillRect(105*1.2,80*1.2,300*1.2,220*1.2);
             ctx.fillStyle = "blanchedalmond";
             ctx.fillRect(115*1.2,90*1.2,280*1.2,200*1.2);
             ctx.fillStyle = "darkred"
-            ctx.fillText("Juego",245,185);
-            ctx.fillText("del",270,243);
+            ctx.fillText("Juego",246.5,185);
+            ctx.fillText("del",272,243);
             ctx.fillText("Ahorcado",200,295);
         }
         else{
