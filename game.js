@@ -17,15 +17,15 @@ function mainBox(gameStarted){
     } // For mobile
     if(window.innerWidth < 480){
         if(!gameStarted){
-            ctx.font = "bold italic 40px Georgia";
-            ctx.fillStyle = "rgb(80,50,50)"
-            ctx.fillRect(105*1.2,80*1.2,300*1.2,220*1.2);
+            ctx.font = "bold 35px Georgia";
+            ctx.fillStyle = "rgb(80,50,50)";
+            ctx.fillRect(120,80*1.2,300*1.2,220*1.2);
             ctx.fillStyle = "blanchedalmond";
-            ctx.fillRect(115*1.2,90*1.2,280*1.2,200*1.2);
+            ctx.fillRect(132,90*1.2,280*1.2,200*1.2);
             ctx.fillStyle = "darkred"
-            ctx.fillText("Juego",246.5,185);
-            ctx.fillText("del",272,243);
-            ctx.fillText("Ahorcado",200,295);
+            ctx.fillText("Juego",255,186);
+            ctx.fillText("del",273,243);
+            ctx.fillText("Ahorcado",214,295);
         }
         else{
             ctx.clearRect(50,90,450,280);
@@ -101,14 +101,8 @@ function mainGame(){
                 if(tryCounter == 0){
                     letterHistory.push(inputKey);
                     ctxLines.fillStyle = "rgb(225,0,0)";
-                    if(window.innerWidth >= 480){
-                        ctxLines.font = "20px Inter";
-                        ctxLines.fillText(inputKey,x2,100);
-                    }
-                    if(window.innerWidth < 480){ // MOBILE
-                        ctxLines.font = "30px Inter";
-                        ctxLines.fillText(inputKey,x2,110);
-                    }
+                    ctxLines.font = "20px Inter";
+                    ctxLines.fillText(inputKey,x2,100);
                 }
                 if(tryCounter > 0){
                     letterHistory.forEach((eLetterHistory) =>{
@@ -120,22 +114,14 @@ function mainGame(){
                         x2 += 30;
                         letterHistory.push(inputKey);
                         ctxLines.fillStyle = "rgb(225,0,0)";
-                        if(window.innerWidth >= 480){
-                            ctxLines.font = "20px Inter";
-                            ctxLines.fillText(inputKey,x2,100);
-                        }
-                        if(window.innerWidth < 480){ // MOBILE
-                            ctxLines.font = "30px Inter";
-                            ctxLines.fillText(inputKey,x2,110);
-                        }
+                        ctxLines.font = "20px Inter";
+                        ctxLines.fillText(inputKey,x2,100);
                     }
                 }
             }
             //
             if(window.innerWidth > 480){
                 ctxLines.font = "35px Inter";
-            }else{ // For mobile
-                ctxLines.font = "65px Inter";
             }
             ctxLines.fillStyle = "darkblue";
             
@@ -250,141 +236,29 @@ function mainGame(){
                                 break;
                         }
                     }
-                    // MOBILE
-                    if( (inputKey != e2) && (index == (wordReady.length - 1) && (!letterCheck)) && (window.innerWidth < 480)){
-                        switch (pos) {
-                            case 1: 
-                                    ctx.fillStyle="darkblue";
-                                    ctx.moveTo(200-50,345);
-                                    ctx.lineTo(200-50,350);
-                                    ctx.lineTo(400+50,350);
-                                    ctx.lineTo(400+50,345);
-                                    ctx.lineTo(200-50,345);
-                                    ctx.fill();
-                                    pos++;
-                                break;
-        
-                            case 2: ctx.moveTo(230-50,325+20);
-                                    ctx.lineTo(230-50,40-20);
-                                    ctx.lineTo(235-50,40-20);
-                                    ctx.lineTo(235-50,325+20);
-                                    ctx.fill();
-                                    pos++;
-                                break;
-        
-                            case 3: ctx.moveTo(235-50,40-20);
-                                    ctx.lineTo(350+20,40-20);
-                                    ctx.lineTo(350+20,45-20);
-                                    ctx.lineTo(235-50,45-20);
-                                    ctx.fill();
-                                    pos++;
-                                break;
-        
-                            case 4: ctx.moveTo(350+20,45-20);
-                                    ctx.lineTo(350+20,75-20);
-                                    ctx.lineTo(345+20,75-20);
-                                    ctx.lineTo(345+20,45-20);
-                                    ctx.fill();
-                                    pos++;
-                                break;
-                            // Cabeza
-                            case 5: ctx.beginPath();
-                                    ctx.arc(347.5+20,105-20,35,0,2*3.14);
-                                    ctx.fill();
-                                    ctx.beginPath();
-                                    ctx.fillStyle="rgb(255, 241, 223)";
-                                    ctx.arc(347.5+20,105-20,30,0,2*3.14);
-                                    ctx.fill();
-                                    pos++;
-                                break;
-        
-                            case 6: ctx.beginPath();
-                                    ctx.fillStyle="darkblue"
-                                    ctx.moveTo(350+20,130-10);
-                                    ctx.lineTo(350+20,220);
-                                    ctx.lineTo(345+20,220);
-                                    ctx.lineTo(345+20,130-10);
-                                    ctx.fill();
-                                    pos++;
-                                break;
-        
-                            case 7: ctx.moveTo(345+20,220);
-                                    ctx.lineTo(300+20,290);
-                                    ctx.lineTo(305+20,290);
-                                    ctx.lineTo(350+20,220);
-                                    ctx.fill();
-                                    pos++;
-                                break;
-        
-                            case 8: ctx.moveTo(350+20,220);
-                                    ctx.lineTo(395+20,290);
-                                    ctx.lineTo(390+20,290);
-                                    ctx.lineTo(345+20,220);
-                                    ctx.fill();
-                                    pos++;
-                                break;
-        
-                            case 9: ctx.beginPath();
-                                    ctx.moveTo(345+20,165);
-                                    ctx.lineTo(290+20,220);
-                                    ctx.lineTo(296+20,220);
-                                    ctx.lineTo(351+20,165);
-                                    ctx.fill();
-                                    pos++;
-                                break;
-        
-                            case 10: ctx.beginPath();
-                                    ctx.moveTo(350+20,165);
-                                    ctx.lineTo(406+20,220);
-                                    ctx.lineTo(400+20,220);
-                                    ctx.lineTo(344+20,165);
-                                    ctx.fill();
-                                    pos++;
-                                break;
-                        }
-                    }
                     if(pos == 11){
                         // Texto Game Over
-                        if(window.innerWidth >= 480){
-                            ctx.fillStyle = "rgb(210,0,0)";
-                            ctx.font = "bold 25px Inter";
-                            ctx.fillText("Has perdido!",40,180);
-                            ctx.fillStyle = "rgb(101,0,33)"
-                            ctx.font = "bold 21px sans-serif";
-                            ctx.fillText("La palabra era:",40,240);
-                            secretWord = wordReady.join("");
-                            ctx.fillStyle = "brown";
-                            ctx.font = "italic bold 21px Inter";
-                            ctx.fillText(`${secretWord}`,40,270);
-                        }
-                        if(window.innerWidth < 480){ // MOBILE
-                            ctxMobile.fillStyle = "rgb(210,0,0)";
-                            ctxMobile.font = "bold 20px Inter";
-                            ctxMobile.fillText("Has perdido! La palabra era:",20,25);
-                            secretWord = wordReady.join("");
-                            ctxMobile.fillStyle = "brown";
-                            ctxMobile.font = "italic bold 25px Inter";
-                            ctxMobile.fillText(`${secretWord}`,100,55);
-                        }
+                        ctx.fillStyle = "rgb(210,0,0)";
+                        ctx.font = "bold 25px Inter";
+                        ctx.fillText("Has perdido!",40,180);
+                        ctx.fillStyle = "rgb(101,0,33)"
+                        ctx.font = "bold 21px sans-serif";
+                        ctx.fillText("La palabra era:",40,240);
+                        secretWord = wordReady.join("");
+                        ctx.fillStyle = "brown";
+                        ctx.font = "italic bold 21px Inter";
+                        ctx.fillText(`${secretWord}`,40,270);
                         endgame = true;
                     }
                     if(checkCounter == wordReady.length){
                         // Texto Pass
-                        if(window.innerWidth >= 480){
-                            ctx.fillStyle = "rgb(0,200,0)";
-                            ctx.font = "bold 24px Inter";
-                            ctx.fillText("Felicidades!",40,110);
-                            ctx.fillStyle = "forestgreen"
-                            ctx.font = "bold 22px Inter";
-                            ctx.fillText("Has adivinado",40,160);
-                            ctx.fillText("la palabra :)",40,190);
-                        }
-                        if(window.innerWidth < 480){
-                            ctxMobile.fillStyle = "forestgreen";
-                            ctxMobile.font = "bold 20px Inter";
-                            ctxMobile.fillText("Felicidades!",100,25);
-                            ctxMobile.fillText("Has adivinado la palabra :)",40,50);
-                        }
+                        ctx.fillStyle = "rgb(0,200,0)";
+                        ctx.font = "bold 24px Inter";
+                        ctx.fillText("Felicidades!",40,110);
+                        ctx.fillStyle = "forestgreen"
+                        ctx.font = "bold 22px Inter";
+                        ctx.fillText("Has adivinado",40,160);
+                        ctx.fillText("la palabra :)",40,190);
                         endgame = true;
                     }
                 }
