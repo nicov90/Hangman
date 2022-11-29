@@ -8,7 +8,7 @@ function mainBox(){
     ctxIndex.fillStyle = "blanchedalmond";
     ctxIndex.fillRect(30,30,340,240);
     ctxIndex.fillStyle = "brown";
-    ctxIndex.fillText("Juego",146,108);
+    ctxIndex.fillText("Juego",141,109);
     ctxIndex.fillText("del",166,165);
     ctxIndex.fillText("Ahorcado",101,214.5);
 }
