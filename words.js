@@ -1,13 +1,15 @@
 const wordInput = document.querySelector("#word-input");
 const buttonSave = document.querySelector("#button-save");
-const words = (JSON.parse(localStorage.getItem("newWordsList"))).words || ['Futbol','Egoista','Conexion','Corazon','Hormiga','Almohada','Exhausto','Deporte','Extintor','Herreria','Flexible','Zapallo','Manzana','Arbol','Economia','Puerta','Parasito','Hospital','Basilica',
+const words = JSON.parse(localStorage.getItem("newWordsList")) || ['Futbol','Egoista','Conexion','Corazon','Hormiga','Almohada','Exhausto','Deporte','Extintor','Herreria','Flexible','Zapallo','Manzana','Arbol','Economia','Puerta','Parasito','Hospital','Basilica',
                 'Montaña','Anhelar','Taxista','Exhibido','Guitarra','Saxofon','Borracho','Proyecto','Extremo','Hexagono','Pieza','Hipoteca','Honduras','Prohibir','Casa','Tablero','Vehiculo','Consola','Adhesivo','Lazo'];
 const wordReady = [];
 const errorMessage = document.querySelector(".error-message");
 let input = "";
 
 function randomWord(){
-    let chosenWord = words[Math.floor(Math.random()*(words.length-1))+1]
+    console.log(words)
+    let wordsList = words.words || words;
+    let chosenWord = wordsList[Math.floor(Math.random()*(wordsList.length-1))+1]
     console.log(chosenWord);
     for(let i=0;i<chosenWord.length;i++){
         let letter = (chosenWord.charAt(i)).toUpperCase();
