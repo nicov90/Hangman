@@ -13,29 +13,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <a href="index.html"><img class="logo-img" src="./img/logo.png" alt="logo alura"></a>
-        </div>
-    </header>
-    <main>
-        <section class="addword-container">
-            <textarea name="word-input" id="word-input" class="input-area" placeholder="Ingrese una palabra" maxlength="8"></textarea>
-            <div class="error-container">
-                <p class="error-message"></p>
+    <div class="all">
+        <header>
+            <div class="logo-container">
+                <a href="index.html"><img class="logo-img" src="./img/logo.png" alt="logo alura"></a>
             </div>
-            <div class="warning-container">
-                <i class="fa-solid fa-triangle-exclamation"></i>
-                <p class="warning">Máximo de 8 letras</p>
-            </div>
-            <div class="buttons-addword-container">
-                <a href="game.html" class="buttons-addword" id="button-save"><i class="fa-solid fa-check"></i>Guardar y empezar</a>
-                <a href="index.html" class="buttons-addword" id="button-cancel"><p>Cancelar</p></a>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <p class="author">&copy Made by Nicolás Valdez</p>
-    </footer>
+        </header>
+        <main>
+            <section class="addword-container">
+                <textarea name="word-input" id="word-input" class="input-area" placeholder="Ingrese una palabra" maxlength="8"></textarea>
+                <div class="error-container">
+                    <p class="error-message"></p>
+                </div>
+                <div class="warning-container">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <p class="warning">Máximo de 8 letras</p>
+                </div>
+                <div class="buttons-addword-container">
+                    <a href="game.html" class="buttons-addword" id="button-save"><i class="fa-solid fa-check"></i>Guardar y empezar</a>
+                    <a href="index.html" class="buttons-addword" id="button-cancel"><p>Cancelar</p></a>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="author">&copy Made by Nicolás Valdez</p>
+        </footer>
+    </div>
     <script src="words.js"></script>
 </body>

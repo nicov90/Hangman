@@ -13,30 +13,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <a href="index.html"><img class="logo-img" src="./img/logo.png" alt="logo alura"></a>
-        </div>
-    </header>
-    <main>
-        <section class="main-container game">
-            <canvas id="canvas" width="600" height="360"></canvas>
-            <canvas id="canvas-endgame" width="320" height="60"></canvas>
-            <canvas id="canvas-lines" width="600" height="120"></canvas>
-            <input class="input-mobile" type="text" name="input-mobile" maxlength="1" pattern="/^[A-Za-z\u00F1\u00D1]$/{1}">
-            <div class="tips-container">
-                <i class="fa-solid fa-circle-info"></i>
-                <p class="tips">Presione una letra en su teclado para jugar</p>
+    <div class="all">
+        <header>
+            <div class="logo-container">
+                <a href="index.html"><img class="logo-img" src="./img/logo.png" alt="logo alura"></a>
             </div>
-            <div class="game-buttons-container">
-                <p class="game-buttons" id="new-game-button">Nuevo juego</p>
-                <a href="index.html" class="game-buttons" id="give-up-button">Rendirse</a>
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <p class="author">&copy Made by Nicolás Valdez</p>
-    </footer>
+        </header>
+        <main>
+            <section class="main-container game">
+                <canvas id="canvas" width="600" height="360"></canvas>
+                <canvas id="canvas-endgame" width="320" height="60"></canvas>
+                <canvas id="canvas-lines" width="600" height="120"></canvas>
+                <input class="input-mobile" type="text" name="input-mobile" maxlength="1" pattern="/^[A-Za-z\u00F1\u00D1]$/{1}">
+                <div class="tips-container">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <p class="tips">Presione una letra en su teclado para jugar</p>
+                </div>
+                <div class="game-buttons-container">
+                    <p class="game-buttons" id="new-game-button">Nuevo juego</p>
+                    <a href="index.html" class="game-buttons" id="give-up-button">Rendirse</a>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="author">&copy Made by Nicolás Valdez</p>
+        </footer>
+    </div>
     <script src="words.js"></script>
     <script src="game.js"></script>
     <script src="gameMobile.js"></script>
